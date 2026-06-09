@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho 2026 - Drones Irrigadores Inteligentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🚁 Drones Irrigadores Inteligentes</h1>
+        <div class="subtitulo">🌱 Projeto Agrinho 2026 | Tecnologia Sustentável no Combate à Seca 🌍</div>
+        <div class="subtitulo" style="font-size: 0.9rem; margin-top: 0.5rem;">"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</div>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#sobre">🌾 Sobre</a></li>
+            <li><a href="#simulacao">🚁 Simulação</a></li>
+            <li><a href="#metodologia">🛠️ Metodologia</a></li>
+            <li><a href="#cronograma">📅 Cronograma</a></li>
+            <li><a href="#equipe">👥 Equipe</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Sessão Sobre -->
+        <div id="sobre" class="card">
+            <h2>🌾 Sobre o Projeto</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>🔍 Problema central:</strong> <em>"Como podemos usar a tecnologia para irrigar plantações de forma precisa, sem desperdiçar água e protegendo o solo?"</em></p>
+            <p>Com a crescente escassez hídrica e a necessidade de produzir mais alimentos, desenvolvemos um <strong>projeto de Drone Irrigador Inteligente</strong> que utiliza sensores de umidade para identificar áreas secas e aplicar água apenas onde necessário, reduzindo o consumo hídrico em até <strong>70%</strong>.</p>
+            <br>
+            <div class="grid">
+                <div class="info-box">
+                    <h3>💧 Economia de Água</h3>
+                    <p>Irrigação precisa reduz desperdício e preserva recursos hídricos, garantindo sustentabilidade.</p>
+                </div>
+                <div class="info-box">
+                    <h3>🤖 Tecnologia Acessível</h3>
+                    <p>Construído com materiais reciclados (garrafas PET, Arduino de baixo custo) e energia solar.</p>
+                </div>
+                <div class="info-box">
+                    <h3>🌿 Sustentabilidade</h3>
+                    <p>Alinhado aos ODS 2 (Fome Zero), ODS 6 (Água Potável) e às diretrizes do Agrinho 2026.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulação Interativa -->
+        <div id="simulacao" class="card drone-simulator">
+            <h2>🚁 Simulação do Drone Irrigador</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">🌱 <strong>Clique nas plantas secas (laranjas)</strong> para acionar o drone e irrigar! 🌱</p>
+            
+            <div class="field">
+                <div class="soil" id="soil">
+                    <div class="plant dry" data-id="0">🌾 Planta 1<br><small class="badge">SECA</small></div>
+                    <div class="plant healthy" data-id="1">🌿 Planta 2<br><small>Saudável</small></div>
+                    <div class="plant dry" data-id="2">🌾 Planta 3<br><small class="badge">SECA</small></div>
+                    <div class="plant healthy" data-id="3">🌿 Planta 4<br><small>Saudável</small></div>
+                    <div class="plant dry" data-id="4">🌾 Planta 5<br><small class="badge">SECA</small></div>
+                </div>
+            </div>
+
+            <div class="drone-status" id="droneStatus">
+                🚁 Drone: <strong>✅ Em espera - Pronto para missão!</strong>
+            </div>
+
+            <div class="water-container">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>💧 Reservatório do Drone</span>
+                    <span id="waterText">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="waterProgress">0%</div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="irrigatedCount">0</div>
+                    <div>🌿 Plantas Irrigadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="waterSaved">0</div>
+                    <div>💧 Litros Economizados</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button id="autoIrrigateBtn">🌊 Irrigação Automática</button>
+                <button id="resetBtn">🔄 Nova Sessão (Recarregar)</button>
+            </div>
+            <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">💡 <em>Cada irrigação consome 15L do reservatório. Capacidade total: 100L</em></p>
+        </div>
+
+        <!-- Metodologia -->
+        <div id="metodologia" class="card">
+            <h2>🛠️ Metodologia - Passo a Passo</h2>
+            <div class="grid">
+                <div class="info-box">
+                    <h3>📚 1. Pesquisa</h3>
+                    <p>Visita a propriedades rurais, entrevistas com agricultores e estudo sobre consumo hídrico na agricultura local.</p>
+                </div>
+                <div class="info-box">
+                    <h3>♻️ 2. Construção</h3>
+                    <p>Uso de garrafas PET, motores reciclados, sensor de umidade (Arduino) e placa solar para energia limpa.</p>
+                </div>
+                <div class="info-box">
+                    <h3>💻 3. Programação</h3>
+                    <p>Configuração do drone para identificar solo seco e liberar água de forma inteligente e autônoma.</p>
+                </div>
+                <div class="info-box">
+                    <h3>🎥 4. Divulgação</h3>
+                    <p>Produção de vídeo de 3 minutos, fotos do processo e diário de bordo para o concurso Agrinho.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cronograma -->
+        <div id="cronograma" class="card">
+            <h2>📅 Cronograma de Atividades</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="month">Abril/Maio</div>
+                    Inscrições no Agrinho, formação da equipe, visitas ao campo
+                </div>
+                <div class="timeline-item">
+                    <div class="month">Junho</div>
+                    Construção do protótipo e testes iniciais em laboratório
+                </div>
+                <div class="timeline-item">
+                    <div class="month">Julho</div>
+                    Ajustes, programação avançada e testes na horta da escola
+                </div>
+                <div class="timeline-item">
+                    <div class="month">Agosto</div>
+                    Gravação do vídeo, produção do relatório e envio da documentação
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipe e Parcerias -->
+        <div id="equipe" class="card">
+            <h2>👥 Nossa Equipe</h2>
+            <div class="grid">
+                <div class="info-box">
+                    <h3>👩‍🏫 Professora Orientadora</h3>
+                    <p>Ana Paula Souza - Especialista em Tecnologia Educacional e Robótica</p>
+                </div>
+                <div class="info-box">
+                    <h3>👨‍🎓 Equipe Técnica</h3>
+                    <p>João Silva, Maria Oliveira, Lucas Santos e Ana Clara (8º ano)</p>
+                </div>
+                <div class="info-box">
+                    <h3>🤝 Parceiros</h3>
+                    <p>Sindicato Rural Local, Escola Municipal Carlos Gomes, Secretaria de Agricultura</p>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; background: #e8f5e9; padding: 1rem; border-radius: 15px; text-align: center;">
+                <strong>🏆 Missão:</strong> Levar tecnologia sustentável ao campo, unindo inovação e preservação ambiental!
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>🌱 <strong>Projeto Agrinho 2026</strong> - "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+        <p>📧 contato@dronesirrigadores.com | 🌐 www.agrinho2026.com.br</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">💧 "Tecnologia a favor da terra - irrigação inteligente para um futuro melhor" 💧</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

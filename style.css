@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f7f0 0%, #e0ebe0 100%);
+    color: #1a3a1a;
+    line-height: 1.6;
+}
+
+/* ========== CABEÇALHO ========== */
+.header {
+    background: linear-gradient(135deg, #1b5e20, #0d3b0f);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "🚁";
+    font-size: 200px;
+    position: absolute;
+    right: -30px;
+    top: -50px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.header::after {
+    content: "🌱";
+    font-size: 180px;
+    position: absolute;
+    left: -40px;
+    bottom: -60px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.header .subtitulo {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== NAVEGAÇÃO ========== */
+.nav {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.nav li a:hover {
+    background: #2e7d32;
+    color: white;
+}
+
+/* ========== CONTAINER PRINCIPAL ========== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ========== CARDS ========== */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+    color: #2e7d32;
+    border-left: 5px solid #4caf50;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* ========== GRID ========== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.info-box {
+    background: #f1f8e9;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #4caf50;
+    transition: all 0.3s;
+}
+
+.info-box:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-box h3 {
+    color: #1b5e20;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+/* ========== SIMULAÇÃO DO DRONE ========== */
+.drone-simulator {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+}
+
+.field {
+    background: #8d6e63;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.soil {
+    background: #5d4037;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.plant {
+    background: #4caf50;
+    width: 100px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.plant:hover {
+    transform: scale(1.05);
+}
+
+.plant.dry {
+    background: #ef6c00;
+    box-shadow: 0 0 12px rgba(239,108,0,0.6);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.plant.wet {
+    background: #2196f3;
+}
+
+.plant.healthy {
+    background: #4caf50;
+}
+
+.drone-status {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #1b5e20;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Barra de progresso */
+.water-container {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    background: #ddd;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    background: #2196f3;
+    height: 35px;
+    width: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: width 0.5s ease;
+    border-radius: 30px;
+}
+
+/* Estatísticas */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* ========== CRONOGRAMA ========== */
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.timeline-item {
+    flex: 1;
+    min-width: 180px;
+    background: #f1f8e9;
+    padding: 1.2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    background: #e8f5e9;
+}
+
+.timeline-item .month {
+    background: #2e7d32;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+/* ========== RODAPÉ ========== */
+.footer {
+    background: #0d3b0f;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* ========== UTILITÁRIOS ========== */
+.badge {
+    background: #ff9800;
+    color: #1a3a1a;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav li a {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .plant {
+        width: 75px;
+        font-size: 0.75rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .card h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Animação do drone voando */
+@keyframes fly {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+.drone-flying {
+    display: inline-block;
+    animation: fly 0.4s ease-in-out infinite;
+}
